@@ -42,8 +42,12 @@ ul{
     margin:6px;
 }
 
-.img-w{
-    height:300px;
+.img-w {
+    height: 300px;
+}
+.img-product{
+    height: 100%;
+    width: 100%;
 }
 
 p.description{

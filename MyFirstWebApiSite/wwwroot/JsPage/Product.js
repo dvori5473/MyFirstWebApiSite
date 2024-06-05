@@ -50,25 +50,34 @@ const drawProducts = (data) => {
 
 }
 
+
 const getAllProducts = async () => {
- 
+    try {
+        const responsePost = await fetch('api/Products', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-    const responsePost = await fetch('api/Products', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
+        if (!responsePost.ok) {
+            throw new Error('Network response was not ok');
         }
-    });
 
-    const dataPost = await responsePost.json();
- 
-    drawProducts(dataPost);
-    document.getElementById("minPrice").value = dataPost[0].price
-    document.getElementById("maxPrice").value = dataPost[dataPost.length - 1].price
-    
-  
-}
+        const dataPost = await responsePost.json();
 
+
+        if (dataPost.length > 0) {
+            drawProducts(dataPost);
+            document.getElementById("minPrice").value = dataPost[0].price;
+            document.getElementById("maxPrice").value = dataPost[dataPost.length - 1].price;
+        } else {
+            console.error('No products returned from the API');
+        }
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+};
 
 
 const filterProducts = async() => {
@@ -121,7 +130,7 @@ const getAllCategories = async () => {
     });
 
     const dataPost = await responsePost.json();
-    console.log(dataPost)
+
     drawCategories(dataPost);
 
 }

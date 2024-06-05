@@ -47,7 +47,7 @@ const Register = async () => {
     else {
         
         const dataPost = await responsePost.json();
-        console.log(dataPost)
+
     if (!dataPost) {
         window.location.href = "AddUser.html"
     }
@@ -98,7 +98,6 @@ const CheckPassword = async () => {
             body: JSON.stringify(Password)
         });
         const dataPost = await responsePost.json();
-        console.log(responsePost)
 
         var color=''
         document.getElementById("progress").setAttribute("value", dataPost)

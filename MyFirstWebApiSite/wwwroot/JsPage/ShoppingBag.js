@@ -19,7 +19,6 @@ const drawProducts = (products) => {
         card.querySelector('.itemName').textContent =product.productName
         card.querySelector('img').src = '../Image/' + product.imageUrl
         card.querySelector('.descriptionColumn').innerText = product.description
-        //card.querySelector('.itemName').innerText = product.productName
         card.querySelector('.price').innerText = product.price * product.quantity
         card.querySelector('.quantity').innerText = product.quantity
         card.querySelector(".DeleteButton").addEventListener('click', () => {product.quantity=1, removeFromBasket(product) });
@@ -83,8 +82,7 @@ const placeOrder = async() => {
         },
         body: JSON.stringify(OrderData)
     });
-
-    if (responseOrder) {
+    if (responseOrder.ok) {
         sessionStorage.removeItem("Basket");
         alert("the order is succsess")
         window.location.href = "Products.html"

@@ -52,13 +52,11 @@ a {
     }
 
 progress {
-    width: 300px; /* Matches the width of the input fields */
+    width: 300px;
     height: 20px;
-    margin-bottom: 20px;
 }
 
-#strength {
+#strentgh {
+    margin-bottom: 20px;
     font-weight: bold;
-    margin-top: 10px;
-    color: #333;
 }

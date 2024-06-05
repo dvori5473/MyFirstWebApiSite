@@ -10,7 +10,6 @@ namespace DTOs
 {
     public class OrderDto
     {
-        public int OrderId { get; set; }
         [Required, DataType("dd-mm-yyyy")]
         public DateTime OrderDate { get; set; }
         [Required]
