@@ -40,10 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\CssPage\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\CssPage\Products.css" />
     <None Include="wwwroot\CssPage\ShoppingBag.css" />
     <None Include="wwwroot\Products.html" />
