@@ -9,8 +9,8 @@ const getAllProducts = async () => {
 const drawProducts = (products) => {
 
     const template = document.getElementById("temp-row");
-    let tmp = 0
-    let count = 0
+    let tmp = 0;
+    let count = 0;
     products.forEach(product => {
         tmp += product.quantity * product.price
         count+=product.quantity
