@@ -20,7 +20,6 @@ namespace TestProject
             var mockSet = new Mock<DbSet<User>>();
 
             // Mock FindAsync to return the user based on UserId
-            mockSet.Setup(m => m.FindAsync(It.IsAny<int>())).ReturnsAsync((object[] ids) => users.FirstOrDefault(u => u.UserId == (int)ids[0]));
 
             var mockContext = new Mock<AdoNetMarketContext>();
             mockContext.Setup(c => c.Users).Returns(mockSet.Object);
